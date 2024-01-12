@@ -1,0 +1,31 @@
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 10
+  jackson:
+    time-zone: UTC
+  datasource:
+    url: jdbc:postgresql://localhost:5432/telegram_bot?connectionTimeZone=UTC
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+bot:
+  name: ${BOT_NAME}
+  token: ${BOT_TOKEN}
+  users:
+    limit: 10
+  prices:
+    polling:
+      seconds: 5
+
